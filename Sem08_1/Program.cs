@@ -71,7 +71,7 @@ namespace Sem08_1
                         break;
                     case 4:
                         dividir();
-                        Console.WriteLine("dividir");//dividir
+                        Console.WriteLine("La division"); //dividir
                         break;
                     default: Console.WriteLine("opcion no valida");//opcion no valida
                         break;
@@ -98,7 +98,7 @@ namespace Sem08_1
             float resultado = n1 * n2;
             return resultado;   
         }
-        static float dividir()
+        static string dividir()
         {
             Console.WriteLine("ingrese el numero 1: ");
             float n1 = float.Parse(Console.ReadLine());
@@ -107,12 +107,11 @@ namespace Sem08_1
             if (verificar(n2))
             {
                 float resultado = n1 / n2; //12 / 0
-                return resultado;
+                return "la division es " + resultado;
             }
             else
             {
-                Console.WriteLine("No es divisible entre 0");
-                return 0;
+                return "No es divisible entre 0";
             }
         }
         static bool verificar(float n2)
