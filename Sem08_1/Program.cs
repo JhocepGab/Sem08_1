@@ -62,11 +62,15 @@ namespace Sem08_1
                         float n2 = float.Parse(Console.ReadLine());
                         resta(n1, n2);
                         break;
-                    case 3:
-                        Console.WriteLine("multiplicar");//multiplicar
-                        multiplicar();
+                    case 3://multiplicar
+                        Console.WriteLine("ingrese el numero 1: ");
+                        float m1 = float.Parse(Console.ReadLine());
+                        Console.WriteLine("ingrese el numero 2: ");
+                        float m2 = float.Parse(Console.ReadLine());
+                        Console.WriteLine("La multiplicacion es: " + multiplicar(m1, m2));
                         break;
                     case 4:
+                        dividir();
                         Console.WriteLine("dividir");//dividir
                         break;
                     default: Console.WriteLine("opcion no valida");//opcion no valida
@@ -89,14 +93,37 @@ namespace Sem08_1
             float resultado = num1 - num2;
             Console.WriteLine("La resta es: " + resultado);
         }
-        static float multiplicar (float n1, float n2, string nombre)
+        static float multiplicar (float n1, float n2)
         {
             float resultado = n1 * n2;
             return resultado;   
         }
-        static void dividir()
+        static float dividir()
         {
-
+            Console.WriteLine("ingrese el numero 1: ");
+            float n1 = float.Parse(Console.ReadLine());
+            Console.WriteLine("ingrese el numero 2: ");
+            float n2 = float.Parse(Console.ReadLine());
+            if (verificar(n2))
+            {
+                float resultado = n1 / n2; //12 / 0
+                return resultado;
+            }
+            else
+            {
+                Console.WriteLine("No es divisible entre 0");
+                return 0;
+            }
+        }
+        static bool verificar(float n2)
+        {
+            if (n2 == 0) { 
+            return false;   //no es divisible
+            }
+            else
+            {
+                return true;    //si es divisible
+            }
         }
     }
 }
